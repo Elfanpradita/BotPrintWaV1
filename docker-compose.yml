@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    container_name: whatsapp-bot
+    build: .
+    restart: always
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - cups-server
+    networks:
+      - bot-network
+
+  cups-server:
+    container_name: cups-server
+    build: ./cups
+    restart: always
+    ports:
+      - "631:631"
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+      - /var/spool/cups:/var/spool/cups
+      - /etc/cups:/etc/cups
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
