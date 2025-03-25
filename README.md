@@ -2,28 +2,18 @@
 
 ## 📂 Struktur Direktori
 ```
-whatsapp-bot/
-├── docker-compose.yml
-├── Dockerfile
-├── .env
-├── package.json
-├── package-lock.json
-├── node_modules/
-├── src/
-│   ├── index.js
-│   ├── config.js
-│   ├── printer.js
-│   ├── utils.js
-│   ├── handlers/
-│   │   ├── messageHandler.js
-│   │   ├── printHandler.js
-│   └── services/
-│       ├── whatsappService.js
-│       ├── printService.js
-├── logs/
-│   ├── bot.log
-│   └── error.log
-└── README.md
+whatsapp-cups-bot/
+│── docker-compose.yml
+│── .env
+│── package.json
+│── package-lock.json
+│── Dockerfile
+│── index.js
+│── data/
+│   └── (Untuk penyimpanan sesi WhatsApp)
+│── cups/
+│   │── Dockerfile
+│   │── cupsd.conf
 ```
 
 ## 🚀 Deskripsi
